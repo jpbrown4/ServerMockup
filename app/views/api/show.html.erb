@@ -1,0 +1,150 @@
+<div id="api-container">
+    <div id="api-body-container">
+        <div class="row">
+ 			<div class="span12">
+        	<h1>Demo Server</h1>
+        	<%= link_to api_index_path do %> 
+        		<button type="button" class="btn btn-primary">Back</button>
+        	<% end %>
+        	&nbsp;&nbsp;&nbsp;&nbsp;
+        	<input type="button" class="btn btn-primary" value="Reload Page" onClick="history.go(0)">
+        	<br>
+        	<br>
+        	<!-- Latest Cool Plugin -->
+        	<% if @response %>
+        		<button type="button" class="btn" data-toggle="collapse" data-target="#latest_cool_plugin">
+           			Latest <%= @name %>
+         		</button>
+	         	<div id="latest_cool_plugin" class="collapse in">
+	         		<div class='well'>
+	         			<% if @response == 'null' %>
+        				<p>None</p>
+        		<% else %>
+	        			<table class="table table-hover">
+						 <tr>
+						 	<th>Name</th>
+						 	<th>Version</th>
+						 	<th>Updated</th>
+						 	<th>Created</th>
+						 </tr>
+				 
+					    <tr>
+					      <td><%= @response['name'] %></td>
+					      <td><%= @response['major'] %>.<%= @response['minor'] %>.<%= @response['revision'] %>.<%= @response['build'] %></td>
+					      <td><%= Time.parse(@response['updated_at']).strftime("%l:%M%p on %m/%d/%y") %></td>
+					      <td><%= Time.parse(@response['created_at']).strftime("%l:%M%p on %m/%d/%y") %></td>
+					    </tr>
+						</table>
+						<% end %>
+					</div>
+				</div>
+				
+       		<% end %>
+       		<br>
+
+       		<!-- Compatible with Cool Plugin -->
+       		<% if @response2 %>
+
+        		<button type="button" class="btn" data-toggle="collapse" data-target="#plugins_compatible_with_cool_plugin">
+           			Plugins Compatible with <%= @name %>
+         		</button>
+	         	<div id="plugins_compatible_with_cool_plugin" class="collapse in">
+	         		<div class='well'>
+	         			<% if @response2 == 'null' or @response2 == [] %>
+        				<p>None</p>
+        		<% else %>
+	        			<table class="table table-hover">
+						 <tr>
+						 	<th>Name</th>
+						 	<th>Version</th>
+						 	<th>Updated</th>
+						 	<th>Created</th>
+						 </tr>
+						<% @response2.each do |plugin| %>
+    						<tr>
+      						<td><%= plugin['name'] %></td>
+					      <td><%= plugin['major'] %>.<%= plugin['minor'] %>.<%= plugin['revision'] %>.<%= plugin['build'] %></td>
+					      <td><%= Time.parse(plugin['updated_at']).strftime("%l:%M%p on %m/%d/%y") %></td>
+					      <td><%= Time.parse(plugin['created_at']).strftime("%l:%M%p on %m/%d/%y") %></td>
+    						</tr>
+  						<% end %>
+  						</table>
+					<% end %>
+					</div>
+				</div>
+				
+       		<% end %>
+
+       		<br>
+
+       		<!-- Compatible with Cool Plugin -->
+       		<% if @response3 %>
+
+        		<button type="button" class="btn" data-toggle="collapse" data-target="#agents_compatible_with_cool_plugin">
+           			Agents Compatible with <%= @name %>
+         		</button>
+	         	<div id="agents_compatible_with_cool_plugin" class="collapse in">
+	         		<div class='well'>
+	         			<% if @response3 == 'null' or @response3 == [] %>
+        				<p>None</p>
+        		<% else %>
+	        			<table class="table table-hover">
+						 <tr>
+						 	<th>Name</th>
+						 	<th>Version</th>
+						 	<th>Updated</th>
+						 	<th>Created</th>
+						 </tr>
+						<% @response3.each do |agent| %>
+    						<tr>
+      						<td><%= agent['name'] %></td>
+					      <td><%= agent['major'] %>.<%= agent['minor'] %>.<%= agent['revision'] %>.<%= agent['build'] %></td>
+					      <td><%= Time.parse(agent['updated_at']).strftime("%l:%M%p on %m/%d/%y") %></td>
+					      <td><%= Time.parse(agent['created_at']).strftime("%l:%M%p on %m/%d/%y") %></td>
+    						</tr>
+  						<% end %>
+  						</table>
+					<% end %>
+					</div>
+				</div>
+				
+       		<% end %>
+
+       		<br>
+
+       		<!-- Compatible with Cool Plugin -->
+       		<% if @response4 %>
+
+        		<button type="button" class="btn" data-toggle="collapse" data-target="#servers_compatible_with_cool_plugin">
+           			Servers Compatible with <%= @name %>
+         		</button>
+	         	<div id="servers_compatible_with_cool_plugin" class="collapse in">
+	         		<div class='well'>
+	         			<% if @response4 == 'null' or @response4 == [] %>
+        				<p>None</p>
+        		<% else %>
+	        			<table class="table table-hover">
+						 <tr>
+						 	<th>Name</th>
+						 	<th>Version</th>
+						 	<th>Updated</th>
+						 	<th>Created</th>
+						 </tr>
+						<% @response4.each do |server| %>
+    						<tr>
+      						<td><%= server['name'] %></td>
+					      <td><%= server['major'] %>.<%= server['minor'] %>.<%= server['revision'] %>.<%= server['build'] %></td>
+					      <td><%= Time.parse(server['updated_at']).strftime("%l:%M%p on %m/%d/%y") %></td>
+					      <td><%= Time.parse(server['created_at']).strftime("%l:%M%p on %m/%d/%y") %></td>
+    						</tr>
+  						<% end %>
+  						</table>
+					<% end %>
+					</div>
+				</div>
+				
+       		<% end %>
+    	</div>
+	</div>
+    </div>
+</div>

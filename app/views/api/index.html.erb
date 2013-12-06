@@ -1,0 +1,16 @@
+<div id="api-container">
+    <div id="api-body-container">
+        <div class="row">
+ 			<div class="span12">
+	        	<h1>Demo Server</h1>
+	        	<div class="well">
+	        		<h2>Plugins</h2>
+	        		<% plugin_names = ['Cool Plugin', "Joe's Plugin", "Plugin for Dummies", "Red Hat Plugin", "Lotus Domino", "SAP HANA", "MySQL", "Novell Netware", "Sybase IQ", "POSTGRESQL", "Informix", "Microsoft SQL Server", "MongoDB", "IBM Content Manager"] %>
+	        		<% @pluginnames.each do |plugin_name| %>
+	        			<%= button_to plugin_name, api_path(plugin_name), :class => 'btn btn-default' %>
+	        		<% end %>
+	        	</div>
+			</div>
+		</div>
+    </div>
+</div>

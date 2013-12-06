@@ -1,0 +1,29 @@
+// Place all the styles related to the Plugins controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+background-color: #0067C5;
+}
+#plugin-container
+{
+background-color: #0067C5;
+padding:20px 10px 20px 10px;
+
+float:right;
+margin-right:0px;
+}
+
+#plugin-table-container
+{
+
+
+background-color:#ffffff;
+width:100%;
+float:right;
+padding:10px;
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 8px 6px -6px black;
+}
+
